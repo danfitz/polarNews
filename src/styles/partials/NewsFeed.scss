@@ -1,0 +1,48 @@
+.newsFeedComponent {
+    position: relative;
+    z-index: 99;
+    margin-top: 3rem;
+    width: 100%;
+    // margin-top: -60vh;
+    // margin-bottom: -1rem;
+    width: 42rem;
+    max-width: 85%;
+    // min-height: 100vh;
+    // height: 1000px;
+    // box-shadow: $boxShadow;
+    // border-radius: 10px;
+    animation-name: fadeIn;
+    animation-duration: 4s;
+
+    // .newspaperFront, .newspaperBack {
+    //     width: 100%;
+    //     height: 100%;
+    //     border-radius: 5px;
+    // }
+    // .newspaperFront {
+    //     background-color: gainsboro;
+    // }
+    // .newspaperBack {
+    //     position: absolute;
+    //     z-index: -1;
+    //     top: 0.5rem;
+    //     left: 0.5rem;
+    //     background-color: wheat;
+    // }
+
+    .viewButton {
+        display: block;
+        margin: 0 auto;
+        color: white;
+        background-color: dimgray;
+        font-family: $secondaryFont;
+        font-size: 3rem;
+        border: none;
+        box-shadow: 5px 5px 0 0 darkgray;
+        cursor: pointer;
+    }
+    .viewButton:hover {
+        background-color: darkgray;
+        box-shadow: 4px 4px 0 0 dimgray;
+    }
+}

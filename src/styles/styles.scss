@@ -1,0 +1,20 @@
+// import styling resources
+@import "./fonts.scss";
+@import "./variables.scss";
+@import "./animations.scss";
+
+body {
+    margin: 0;
+    background-color: $bgColor;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 80%;
+}
+
+// load in partials
+@import "./partials/Header.scss";
+@import "./partials/NewsFeed.scss";
+@import "./partials/Footer.scss";

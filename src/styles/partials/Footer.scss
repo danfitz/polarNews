@@ -1,0 +1,27 @@
+.footerComponent {
+    margin-top: 3rem;
+    padding: 1rem 0;
+    width: 100%;
+    color: $fontColor;
+    background-color: $bgColor;
+    font-family: $primaryFont;
+    text-align: center;
+    // box-shadow: $boxShadow;
+
+    h3 {
+        margin: 0;
+        font-family: $secondaryFont;
+    }
+
+    ul {
+        margin: 0;
+        list-style-type: none;
+
+        li {
+            margin-left: -40px;
+        }
+    }
+    a {
+        color: blue;
+    }
+}

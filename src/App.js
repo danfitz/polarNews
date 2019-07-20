@@ -1,24 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header.js";
+import NewsFeed from "./components/NewsFeed.js";
+import Footer from "./components/Footer.js";
+import "./styles/styles.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header title="Polar News" />
+      <NewsFeed />
+      <Footer attributions={[{name: "News API", href: "https://newsapi.org/docs"}, {name: "Aylien", href: "https://docs.aylien.com/textapi"}]} />
     </div>
   );
 }
