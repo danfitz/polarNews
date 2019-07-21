@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/polarNews/static/css/main.a63dc351.chunk.css",
+    "main.js": "/polarNews/static/js/main.3e6c009a.chunk.js",
+    "main.js.map": "/polarNews/static/js/main.3e6c009a.chunk.js.map",
+    "runtime~main.js": "/polarNews/static/js/runtime~main.6d786579.js",
+    "runtime~main.js.map": "/polarNews/static/js/runtime~main.6d786579.js.map",
+    "static/js/2.9459666e.chunk.js": "/polarNews/static/js/2.9459666e.chunk.js",
+    "static/js/2.9459666e.chunk.js.map": "/polarNews/static/js/2.9459666e.chunk.js.map",
+    "index.html": "/polarNews/index.html",
+    "precache-manifest.b9cbe22f3c749c2f51839f87bfd9210d.js": "/polarNews/precache-manifest.b9cbe22f3c749c2f51839f87bfd9210d.js",
+    "service-worker.js": "/polarNews/service-worker.js",
+    "static/css/main.a63dc351.chunk.css.map": "/polarNews/static/css/main.a63dc351.chunk.css.map",
+    "static/media/fullEarth.png": "/polarNews/static/media/fullEarth.f825cd40.png"
+  }
+}
