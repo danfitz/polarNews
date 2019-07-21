@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "63fae26dcfeba53d29aff95719ce748d",
+    "revision": "cb1fd50c319f0068f787d4d11881d2ab",
     "url": "/polarNews/index.html"
   },
   {
-    "revision": "fcd903bf4063e4c514f1",
-    "url": "/polarNews/static/css/main.a63dc351.chunk.css"
+    "revision": "97e327aeaf3a64c5820a",
+    "url": "/polarNews/static/css/main.64a78a3e.chunk.css"
   },
   {
     "revision": "6637b311ea17f8f176d1",
     "url": "/polarNews/static/js/2.9459666e.chunk.js"
   },
   {
-    "revision": "fcd903bf4063e4c514f1",
-    "url": "/polarNews/static/js/main.3e6c009a.chunk.js"
+    "revision": "97e327aeaf3a64c5820a",
+    "url": "/polarNews/static/js/main.93b9c19d.chunk.js"
   },
   {
     "revision": "699a2e710bda9a1da91c",
