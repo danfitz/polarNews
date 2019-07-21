@@ -40,17 +40,23 @@
         bottom: -10rem;
         position: relative;
     }
-    // 90% {
-    //     bottom: 1rem;
-    //     position: relative;
-    // }
-    // 95% {
-    //     bottom: -1rem;
-    //     position: relative;
-
-    // }
     100% {
         bottom: 0;
         position: relative;
+    }
+}
+
+@keyframes barFlash {
+    0% {
+        box-shadow: none;
+        opacity: 1;
+    }
+    30% {
+        box-shadow: 0px 0px 2px 1px $fontColor;
+        opacity: 0.9;
+    }
+    100% {
+        box-shadow: none;
+        opacity: 1;
     }
 }

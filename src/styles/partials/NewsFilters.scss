@@ -5,6 +5,7 @@
     form {
         border-top: 1px solid $fontColor;
         border-bottom: 1px solid $fontColor;
+        
         input, select {
             display: inline-block;
             max-width: 90%;
@@ -19,10 +20,16 @@
         }
         input[name="query"] {
             width: 200px;
+            border: 1px solid $fontColor;
+            border-radius: 5px;
+            background-color: #eef;
         }
         select {
             position: relative;
             bottom: 1px;
+        }
+        .submitContainer {
+            display: inline-block;
         }
         input[type="submit"] {
             font-weight: 700;
@@ -35,5 +42,11 @@
         //     color: #444;
         //     opacity: 1;
         // }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    input, select {
+        font-size: 1.1rem !important;
     }
 }

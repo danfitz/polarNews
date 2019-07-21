@@ -3,10 +3,8 @@
     padding: 1rem 0;
     width: 100%;
     color: $fontColor;
-    background-color: $bgColor;
     font-family: $serif;
     text-align: center;
-    // box-shadow: $boxShadow;
 
     h3 {
         margin: 0;
@@ -22,6 +20,6 @@
         }
     }
     a {
-        color: blue;
+        color: $neutColor;
     }
 }

@@ -11,12 +11,16 @@
         position: relative;
         border-radius: 20px;
         height: 30px;
-        // overflow: hidden;
         background: linear-gradient(90deg, $negColor 0%, $negColor 30%, $neutColor 50%, $posColor 70%, $posColor 100%);
         box-shadow: $boxShadow;
+        animation-name: barFlash;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in;
 
         .avgSentiment {
             position: absolute;
+            z-index: 99;
             left: 50%;
             top: -7px;
             margin-left: -10px;
@@ -39,6 +43,11 @@
             color: white;
             opacity: 0.7;
         }
+    }
+
+    .circularProgress {
+        margin: 1rem 0;
+        text-align: center;
     }
 
     .articleContainer {
@@ -71,6 +80,10 @@
         
         .articleImage img {
             width: 100%;
+        }
+
+        h3 {
+            line-height: 1.6rem;
         }
 
         h4 {

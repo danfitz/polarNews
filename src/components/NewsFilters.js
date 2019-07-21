@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import FilterList from "@material-ui/icons/FilterList";
+import FilterList from "@material-ui/icons/FilterList"; // import filter icon
 
 class NewsFilters extends Component {
     constructor(props) {
@@ -10,21 +10,18 @@ class NewsFilters extends Component {
         }
     }
 
+    // Update values for query and country inputs by adding into state upon any change
+    // Essential to creating a controlled component
     handleChange = (event) => {
-        console.log(event.target);
+        // Must grab name of input first because this method works on both text input and select input
         const name = event.target.name;
+
         this.setState({
             [name]: event.target.value
         });
     }
 
-    // handleSelect = (event) => {
-    //     console.log(event);
-    //     this.setState({
-    //         country: event.target.value
-    //     })
-    // }
-
+    // NOTE: If form is submitted, NewsFilters will update state of NewsFeed using passed in function!
     render() {
         return (
             <div className="newsFiltersComponent wrapper">
@@ -32,7 +29,7 @@ class NewsFilters extends Component {
                     event.preventDefault();
                     this.props.onFilterSubmit(this.state.query, this.state.country);
                 }}>
-                    <input name="query" type="text" placeholder="Filter Topic..." value={this.state.query} onChange={this.handleChange} />
+                    <input name="query" type="text" placeholder="Filter topic..." value={this.state.query} onChange={this.handleChange} />
                     
                     <select name="country" value={this.state.country} onChange={this.handleChange}>
                         <option value="">All Countries</option>
@@ -44,7 +41,10 @@ class NewsFilters extends Component {
                         <option value="nz">New Zealand</option>
                     </select>
                     
-                    <input type="submit" value="Set Filter" /><FilterList />
+                    <div className="submitContainer">
+                        <input type="submit" value="Set Filter" />
+                        <FilterList />
+                    </div>
                 </form>
             </div>
         )

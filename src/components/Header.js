@@ -1,5 +1,5 @@
 import React from "react";
-import fullEarth from "../static/fullEarth.png";
+import fullEarth from "../static/fullEarth.png"; // import image of earth
 
 function Header(props) {
     return (

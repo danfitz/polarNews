@@ -8,7 +8,8 @@ body {
     background-color: $bgColor;
 }
 
-.appComponent {
+#root {
+    position: relative;
     overflow-x: hidden;
 }
 
@@ -23,18 +24,11 @@ body {
     color: white;
     font-weight: 700;
     border-radius: 20px;
-    // text-transform: uppercase;
     font-family: $sansSerif;
 }
-.positive {
-    background-color: $posColor;
-}
-.negative {
-    background-color: $negColor;
-}
-.neutral {
-    background-color: $neutColor;
-}
+.positive { background-color: $posColor; }
+.negative { background-color: $negColor; }
+.neutral { background-color: $neutColor; }
 
 // load in partials
 @import "./partials/Header.scss";
