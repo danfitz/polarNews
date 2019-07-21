@@ -1,9 +1,14 @@
 {
-  "name": "js-advanced-project",
+  "name": "polarnews",
+  "homepage": "http://danielfitz.github.io/polarNews",
   "version": "0.1.0",
   "private": true,
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  },
   "dependencies": {
     "@material-ui/core": "^4.2.1",
+    "@material-ui/icons": "^4.2.1",
     "axios": "^0.19.0",
     "install": "^0.13.0",
     "node-sass": "^4.12.0",
@@ -16,7 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

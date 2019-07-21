@@ -1,6 +1,4 @@
 .newsFeedComponent {
-    position: relative;
-    z-index: 99;
     margin-top: 3rem;
     width: 42rem;
     max-width: 85%;
@@ -19,7 +17,6 @@
 
         .avgSentiment {
             position: absolute;
-            z-index: 99;
             left: 50%;
             top: -7px;
             margin-left: -10px;
@@ -52,7 +49,7 @@
         grid-template-columns: 1fr 2fr 1fr;
         grid-gap: 0.7rem;
 
-        border-top: 0.1px solid $fontColor;
+        border-bottom: 0.1px solid $fontColor;
 
         animation-name: fadeIn, appearFromTop;
         animation-duration: 1s, 1s;
@@ -69,6 +66,7 @@
 
         .articleImage {
             margin: auto 0;
+            margin-left: 0.8rem;
         }
         
         .articleImage img {
@@ -90,6 +88,10 @@
     .articleContainer {
         display: block !important;
         padding-top: 2rem !important;
+
+        .articleImage {
+            margin: 0 !important;
+        }
 
         .articleInfo, .articleSentiment {
             width: 90%;

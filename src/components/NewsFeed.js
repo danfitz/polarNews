@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import NewsFilters from "./NewsFilters.js";
 import axios from "axios";
 import apis from "../constants/apis.js";
 
@@ -16,7 +17,10 @@ class NewsFeed extends Component {
         this.state = {
             articles: [],
             articlesWithSent: [],
-            avgSentiment: 50
+            avgSentiment: 50,
+            query: "",
+            country: ""
+            // timeoutId: null
         }
     }
     
@@ -32,16 +36,20 @@ class NewsFeed extends Component {
                     apiKey: apis.newsApi.key,
                     language: "en",
                     pageSize: 5,
-                    q: "trump"
+                    q: this.state.query,
+                    country: this.state.country
                 }
             });
             
-            console.log("News articles successfully fetched:", newsApiResults);
+            // console.log("News articles successfully fetched:", newsApiResults);
 
             // 2. Store an array of the articles using the data return from the API call in state (with setState)
-            this.setState({ articles: newsApiResults.data.articles });
+            this.setState({
+                articles: newsApiResults.data.articles,
+                articlesWithSent: []
+            });
             
-            console.log("News articles saved to state");
+            // console.log("News articles saved to state");
 
         } catch(error) {
             console.log(error);
@@ -50,10 +58,13 @@ class NewsFeed extends Component {
 
 
     componentDidUpdate(prevProps, prevState) {
-        console.log("Component was just updated! Running code...");
-        console.log("Articles now:", this.state);
-        console.log("Articles before:", prevState);
-        if (this.state.articles.length && this.state.articles.length !== prevState.articles.length) {
+        // console.log("Component was just updated! Running code...");
+        // console.log("Articles now:", this.state);
+        // console.log("Articles before:", prevState);
+        if (this.state.query !== prevState.query || this.state.country !== prevState.country) {
+            this.fetchNews();
+            // clearTimeout(this.state.timeoutId);
+        } else if (this.state.articles.length && this.state.articles.length !== prevState.articles.length) {
             this.fetchArticleSentiment();
         }
     }
@@ -76,7 +87,7 @@ class NewsFeed extends Component {
                 }
             });
 
-            console.log("Sentiment data successfully fetched", articleSentiment);
+            // console.log("Sentiment data successfully fetched", articleSentiment);
 
             this.setStateArticles(targetArticle, articleSentiment);
             
@@ -115,13 +126,16 @@ class NewsFeed extends Component {
                 avgSentiment: avgSentiment
             });
         } else {
-            setTimeout(() => {    
+            const timeoutId = setTimeout(() => {    
                 this.setState({
                     articlesWithSent: copyArticlesWithSent,
                     articles: copyArticles,
                     avgSentiment: avgSentiment
                 });
-            }, 4000);
+            }, 3000);
+            // this.setState({
+            //     timeoutId: timeoutId
+            // });
         }
     }
 
@@ -174,7 +188,7 @@ class NewsFeed extends Component {
             return acc + cur;
         }, 0) / articles.length * 50 + 50;
 
-        console.log(avgSentiment);
+        // console.log(avgSentiment);
 
         return avgSentiment;
     }
@@ -184,6 +198,13 @@ class NewsFeed extends Component {
             <p>Loading articles...</p>
         )
     }
+
+    onFilterSubmit = (query, country) => {
+        this.setState({
+          query: query,
+          country: country
+        });
+      }
 
     render() {
         return (
@@ -195,6 +216,7 @@ class NewsFeed extends Component {
                     <div className="posSection"></div>
                     <p>Avg. Polarity</p>
                 </div>
+                <NewsFilters onFilterSubmit={this.onFilterSubmit} />
                 { this.state.articlesWithSent.length ? this.renderArticles() : this.renderEmptyState() }
             </main>
         );

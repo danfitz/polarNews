@@ -1,68 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Polar News
 
-## Available Scripts
+Discover how **positive**, **negative**, or **neutral** top news headlines are around the world using AI.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+### How It Works
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Curious how positive or negative the world stage is right now? Get a text analysis API to tell you!
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+You can view the positivity/negativity of individual top news articles. You also get a running average of positivity/negativity as more articles appear, giving you a (slight) peek into the current zeitgeist of the moment.
 
-### `npm test`
+There's more too: **you can target specific topics and countries**. Curious about the current attitude of Canadian articles on "Trump"? What about the U.K. on "The Avengers"? You can do that too.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Current Bounadries
 
-### `npm run build`
+* Only includes English articles
+* Only includes top news articles
+* Only analyzes headlines, not actual article contents
+* Only provides 20 articles per query
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Pseudocode Explanation
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+This app is an intermediary between [News API](https://newsapi.org/) and the [Aylien Text Analysis API](https://docs.aylien.com/textapi).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Based on your filters, a GET request is made to News API, returning top headlines from news articles around the world. These headlines are passed through the Aylien Text Analysis API, which returns a polarity measurement of the text, and all this data is presented on the page in a slow drip.
 
-### `npm run eject`
+What's a polarity measurement? Basically, it's a measurement of how positive, negative, or neutral the headline sounds.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Feature Roadmap
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Given everything available in both APIs, here's a few features worth logging here for possible future development:
+* **Fix asynchronous issues where setting a filter leads to a ghost of the old filter flickering in and out of view**
+* Analyze article contents, not just headlines (may require a web scraper)
+* Add support for multiple languages (specifically ones that both News API and Aylien support)
+* Increase number of articles per query (maybe 100?)
+* Open up analysis to news articles from smaller news outlets

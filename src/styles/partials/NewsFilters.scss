@@ -1,0 +1,39 @@
+.newsFiltersComponent {
+    text-align: center;
+    width: 100%;
+
+    form {
+        border-top: 1px solid $fontColor;
+        border-bottom: 1px solid $fontColor;
+        input, select {
+            display: inline-block;
+            max-width: 90%;
+            margin: 0.5rem 0;
+            padding: 0 1rem;
+            color: $fontColor;
+            background-color: $bgColor;
+            font-family: $sansSerif;
+            font-size: 1.5rem;
+            text-align: center;
+            border: none;
+        }
+        input[name="query"] {
+            width: 200px;
+        }
+        select {
+            position: relative;
+            bottom: 1px;
+        }
+        input[type="submit"] {
+            font-weight: 700;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            color: black;
+        }
+        // ::placeholder {
+        //     color: #444;
+        //     opacity: 1;
+        // }
+    }
+}
