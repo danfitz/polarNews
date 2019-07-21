@@ -16,7 +16,7 @@ class NewsFeed extends Component {
         this.state = {
             articles: [],
             articlesWithSent: [],
-            avgSentiment: 0
+            avgSentiment: 50
         }
     }
     
@@ -31,7 +31,7 @@ class NewsFeed extends Component {
                 params: {
                     apiKey: apis.newsApi.key,
                     language: "en",
-                    pageSize: 18,
+                    pageSize: 5,
                     q: "trump"
                 }
             });
@@ -101,21 +101,25 @@ class NewsFeed extends Component {
         // 2. Create copy of current articles but with 1 less article
         const copyArticles = [...this.state.articles];
         copyArticles.shift();
-
+        
         // 3. Create copy of rendered articles but with 1 more article
         const copyArticlesWithSent = [...this.state.articlesWithSent];
         copyArticlesWithSent.unshift(articleWithSent);
 
+        const avgSentiment = this.getAvgSentiment(copyArticlesWithSent);
+
         if (!this.state.articlesWithSent.length) {
             this.setState({
                 articlesWithSent: copyArticlesWithSent,
-                articles: copyArticles
+                articles: copyArticles,
+                avgSentiment: avgSentiment
             });
         } else {
             setTimeout(() => {    
                 this.setState({
                     articlesWithSent: copyArticlesWithSent,
-                    articles: copyArticles
+                    articles: copyArticles,
+                    avgSentiment: avgSentiment
                 });
             }, 4000);
         }
@@ -124,7 +128,7 @@ class NewsFeed extends Component {
     renderArticles() {
         const renderedArticles = this.state.articlesWithSent.map((article, index) => {
             return (
-                <div className="articleContainer" key={index}>
+                <div className="articleContainer" key={this.state.articlesWithSent.length - index}>
                     <a href={article.url} target="_blank"></a>
                     <div className="articleImage">
                         <img src={article.image} alt={article.description} />
@@ -146,7 +150,6 @@ class NewsFeed extends Component {
         });
         // 1. Group together News API data and Aylien data into 1 renderable JSX object
 
-        this.getAvgSentiment();
     
         return (
             <div className="newsFeed">
@@ -155,8 +158,8 @@ class NewsFeed extends Component {
         );
     }
 
-    getAvgSentiment() {
-        const avgSentiment = this.state.articlesWithSent.map(article => {
+    getAvgSentiment(articles) {
+        const avgSentiment = articles.map(article => {
             switch(article.polarity) {
                 case "positive":
                     return 1 * article.polarityConfidence;
@@ -169,9 +172,11 @@ class NewsFeed extends Component {
             }
         }).reduce((acc, cur) => {
             return acc + cur;
-        }) / this.state.articlesWithSent.length * 50 + 50;
+        }, 0) / articles.length * 50 + 50;
 
         console.log(avgSentiment);
+
+        return avgSentiment;
     }
 
     renderEmptyState() {
@@ -183,6 +188,13 @@ class NewsFeed extends Component {
     render() {
         return (
             <main className="newsFeedComponent wrapper">
+                <div className="sentimentBar">
+                    <div className="avgSentiment" style={{left: `${this.state.avgSentiment}%`}}></div>
+                    <div className="negSection"></div>
+                    <div className="neutSection"></div>
+                    <div className="posSection"></div>
+                    <p>Avg. Polarity</p>
+                </div>
                 { this.state.articlesWithSent.length ? this.renderArticles() : this.renderEmptyState() }
             </main>
         );

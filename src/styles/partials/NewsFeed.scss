@@ -2,12 +2,47 @@
     position: relative;
     z-index: 99;
     margin-top: 3rem;
-    width: 100%;
     width: 42rem;
     max-width: 85%;
     font-family: $serif;
     animation-name: fadeIn;
     animation-duration: 4s;
+
+    .sentimentBar {
+        margin-bottom: 4rem;
+        position: relative;
+        border-radius: 20px;
+        height: 30px;
+        // overflow: hidden;
+        background: linear-gradient(90deg, $negColor 0%, $negColor 30%, $neutColor 50%, $posColor 70%, $posColor 100%);
+        box-shadow: $boxShadow;
+
+        .avgSentiment {
+            position: absolute;
+            z-index: 99;
+            left: 50%;
+            top: -7px;
+            margin-left: -10px;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 20px solid $fontColor;
+        }
+
+        p {
+            position: relative;
+            top: 4px;
+            margin: 0;
+            font-family: $sansSerif;
+            text-align: center;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: white;
+            opacity: 0.7;
+        }
+    }
 
     .articleContainer {
         padding: 1rem 0;
@@ -22,15 +57,6 @@
         animation-name: fadeIn, appearFromTop;
         animation-duration: 1s, 1s;
         cursor: pointer;
-
-        // .articleLine {
-        //     position: absolute;
-        //     top: 0;
-        //     left: 5%;
-        //     height: 1px;
-        //     background-color: #ccc;
-        //     width: 90%;
-        // }
 
         a {
             position: absolute;
@@ -60,8 +86,14 @@
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
     .articleContainer {
         display: block !important;
+        padding-top: 2rem !important;
+
+        .articleInfo, .articleSentiment {
+            width: 90%;
+            margin: 0 auto;
+        }
     }
 }
