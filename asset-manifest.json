@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/polarNews/static/css/main.64a78a3e.chunk.css",
-    "main.js": "/polarNews/static/js/main.93b9c19d.chunk.js",
-    "main.js.map": "/polarNews/static/js/main.93b9c19d.chunk.js.map",
+    "main.css": "/polarNews/static/css/main.d43184d1.chunk.css",
+    "main.js": "/polarNews/static/js/main.f2593f8d.chunk.js",
+    "main.js.map": "/polarNews/static/js/main.f2593f8d.chunk.js.map",
     "runtime~main.js": "/polarNews/static/js/runtime~main.6d786579.js",
     "runtime~main.js.map": "/polarNews/static/js/runtime~main.6d786579.js.map",
-    "static/js/2.9459666e.chunk.js": "/polarNews/static/js/2.9459666e.chunk.js",
-    "static/js/2.9459666e.chunk.js.map": "/polarNews/static/js/2.9459666e.chunk.js.map",
+    "static/css/2.764ccc25.chunk.css": "/polarNews/static/css/2.764ccc25.chunk.css",
+    "static/js/2.75424855.chunk.js": "/polarNews/static/js/2.75424855.chunk.js",
+    "static/js/2.75424855.chunk.js.map": "/polarNews/static/js/2.75424855.chunk.js.map",
     "index.html": "/polarNews/index.html",
-    "precache-manifest.720d770946ddcdfe04e2158c89511440.js": "/polarNews/precache-manifest.720d770946ddcdfe04e2158c89511440.js",
+    "precache-manifest.0cda8faf5cf8c43acd3b1b30b1bd3235.js": "/polarNews/precache-manifest.0cda8faf5cf8c43acd3b1b30b1bd3235.js",
     "service-worker.js": "/polarNews/service-worker.js",
-    "static/css/main.64a78a3e.chunk.css.map": "/polarNews/static/css/main.64a78a3e.chunk.css.map",
+    "static/css/2.764ccc25.chunk.css.map": "/polarNews/static/css/2.764ccc25.chunk.css.map",
+    "static/css/main.d43184d1.chunk.css.map": "/polarNews/static/css/main.d43184d1.chunk.css.map",
     "static/media/fullEarth.png": "/polarNews/static/media/fullEarth.f825cd40.png"
   }
 }
