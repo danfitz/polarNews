@@ -1,10 +1,12 @@
 // create global variables
-$primaryFont: "Playfair Display", serif;
-$secondaryFont: "Playfair Display SC", serif;
+$headerFont: "Playfair Display SC", serif;
+$serif: "Playfair Display", serif;
+$sansSerif: "Roboto", sans-serif;
 $fontColor: #333;
 // $bgColor: #696969;
 $bgColor: snow;
 $posColor: green;
 $negColor: red;
+$neutColor: blue;
+$boxShadow: 0 1px 1.5px 0.5px #aaa;
 // $accentColor: darkturquoise;
-$boxShadow: 0 -3px 5px 0.1px $fontColor;

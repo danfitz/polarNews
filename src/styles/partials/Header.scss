@@ -3,7 +3,7 @@
     // height: 120vh;
     // background-image: linear-gradient(0deg, $secondaryColor 0%, $accentColor 30%, $secondaryColor 100%);
     margin-bottom: 2rem;
-    font-family: $primaryFont;
+    font-family: $serif;
     text-align: center;
     
     .earthContainer {
@@ -36,7 +36,7 @@
         padding-top: 3rem;
         padding-bottom: 5rem;
         color: white;
-        font-family: $secondaryFont;
+        font-family: $headerFont;
         font-weight: 900;
         text-shadow: 2px 2px 5px black;
         font-size: 4rem;
@@ -51,14 +51,5 @@
         font-weight: 400;
         animation-name: fadeIn, appearFromTop;
         animation-duration: 2s, 2s;
-
-        #positiveText {
-            color: $posColor;
-            font-weight: 700;
-        }
-        #negativeText {
-            color: $negColor;
-            font-weight: 700;
-        }
     }
 }

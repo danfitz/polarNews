@@ -4,13 +4,13 @@
     width: 100%;
     color: $fontColor;
     background-color: $bgColor;
-    font-family: $primaryFont;
+    font-family: $serif;
     text-align: center;
     // box-shadow: $boxShadow;
 
     h3 {
         margin: 0;
-        font-family: $secondaryFont;
+        font-family: $headerFont;
     }
 
     ul {

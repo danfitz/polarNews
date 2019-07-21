@@ -9,8 +9,7 @@ function Header(props) {
             </div>
             <h1>{props.title}</h1>
             <h2>
-                Live feed of news headlines around the world <br />
-                measured by <span id="positiveText">positivity</span> or <span id="negativeText">negativity</span>
+                Discover how <span className="positive">positive</span>, <span className="negative">negative</span>, or <span className="neutral">neutral</span> news headlines <br />are around the world using AI
             </h2>
         </header>
     )
