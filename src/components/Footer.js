@@ -12,7 +12,7 @@ function Footer(props) {
                 })}
             </ul>
             <p>Created by {props.author}</p>
-            <p><a href={props.githubUrl}>View GitHub Repo</a></p>
+            <p><a href={props.githubUrl} target="_blank">View GitHub Repo</a></p>
         </footer>
     )
 }
