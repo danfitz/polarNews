@@ -9,7 +9,7 @@ function Header(props) {
             </div>
             <h1>{props.title}</h1>
             <h2>
-                Discover how <span className="positive">positive</span>, <span className="negative">negative</span>, or <span className="neutral">neutral</span> <br /> top news headlines are around the world using AI
+                Discover how <span className="positive">positive</span>, <span className="negative">negative</span>, or <span className="neutral">neutral</span> top news headlines are around the world using AI
             </h2>
         </header>
     )
