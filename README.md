@@ -17,7 +17,7 @@ There's more too: **you can target specific topics and countries**. Curious abou
 * Only includes English articles
 * Only includes top news articles
 * Only analyzes headlines, not actual article contents
-* Only provides 100 articles per query
+* Only provides 20 articles per query
 
 ### Pseudocode Explanation
 

@@ -29,7 +29,7 @@ class NewsFeed extends Component {
                 params: {
                     apiKey: apis.newsApi.key,
                     language: "en",
-                    pageSize: 100,
+                    pageSize: 20,
                     q: this.state.query, // defaults to all topics
                     country: this.state.country // defaults to all countries
                 }
