@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/polarNews/precache-manifest.8af123941dc81cac2e6e71334d031326.js"
+  "/polarNews/precache-manifest.a83c3e58b7faf7b05cd2b8bd1270e68c.js"
 );
 
 self.addEventListener('message', (event) => {

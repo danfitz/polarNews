@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "28b15ea41b7b69c514e3e45cd84f43ed",
+    "revision": "6eecada3436af96c1bdf7bbbb4853b09",
     "url": "/polarNews/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/polarNews/static/css/2.764ccc25.chunk.css"
   },
   {
-    "revision": "2435bb70b1cdd7efebad",
+    "revision": "93114034dcc9738b994c",
     "url": "/polarNews/static/css/main.d43184d1.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/polarNews/static/js/2.75424855.chunk.js"
   },
   {
-    "revision": "2435bb70b1cdd7efebad",
-    "url": "/polarNews/static/js/main.b4bc5e0b.chunk.js"
+    "revision": "93114034dcc9738b994c",
+    "url": "/polarNews/static/js/main.0bdf6c22.chunk.js"
   },
   {
     "revision": "699a2e710bda9a1da91c",
