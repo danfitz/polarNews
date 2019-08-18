@@ -1,6 +1,6 @@
 {
   "name": "polarnews",
-  "homepage": "http://danielfitz.github.io/polarNews",
+  "homepage": "https://polar.danielfitz.com",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
