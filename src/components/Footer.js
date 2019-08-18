@@ -7,12 +7,12 @@ function Footer(props) {
             <ul className="attributions">
                 {props.attributions.map(attr => {
                     return (
-                        <li><a href={attr.href}>{attr.name}</a></li>
+                        <li><a href={attr.href} target="_blank" rel="noopener noreferrer">{attr.name}</a></li>
                     );
                 })}
             </ul>
             <p>Created by {props.author}</p>
-            <p><a href={props.githubUrl} target="_blank">View GitHub Repo</a></p>
+            <p><a href={props.githubUrl} target="_blank" rel="noopener noreferrer">View GitHub Repo</a></p>
         </footer>
     )
 }

@@ -141,7 +141,7 @@ class NewsFeed extends Component {
         const renderedArticles = this.state.articlesWithSent.map((article, index) => {
             return (
                 <div className="articleContainer" key={this.state.articlesWithSent.length - index}>
-                    <a href={article.url} target="_blank"></a>
+                    <a href={article.url} target="_blank" rel="noopener noreferrer"></a>
                     <div className="articleImage">
                         <img src={article.image} alt={article.description} />
                     </div>
@@ -180,10 +180,8 @@ class NewsFeed extends Component {
             switch(article.polarity) {
                 case "positive":
                     return 1 * article.polarityConfidence;
-                    break;
                 case "negative":
                     return -1 * article.polarityConfidence;
-                    break;
                 default:
                     return 0;
             }
