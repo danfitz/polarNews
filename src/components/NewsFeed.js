@@ -7,7 +7,7 @@ import CircularProgress from "@material-ui/core/CircularProgress"; // Import cir
 class NewsFeed extends Component {
     constructor(props) {
         super(props);
-        this.timeoutId = null;
+        this.timeoutId = null; // THIS FIXES THE GHOST EFFECT!
         this.state = {
             articles: [],
             articlesWithSent: [],
