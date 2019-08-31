@@ -7,6 +7,7 @@ import CircularProgress from "@material-ui/core/CircularProgress"; // Import cir
 class NewsFeed extends Component {
     constructor(props) {
         super(props);
+        this.timeoutId = null;
         this.state = {
             articles: [],
             articlesWithSent: [],
@@ -35,12 +36,13 @@ class NewsFeed extends Component {
                 }
             });
 
+            
             // 2. Store an array of the articles using the data return from the API call in state (with setState)
             this.setState({
                 articles: newsApiResults.data.articles,
                 articlesWithSent: [] // Hoping this would clear articles when setting a new filter... No luck
             });
-
+            
         } catch(error) {
             console.log(error);
         }
@@ -53,6 +55,7 @@ class NewsFeed extends Component {
     // then do it all over again with the next article in the backlog!
     componentDidUpdate(prevProps, prevState) {
         if (this.state.query !== prevState.query || this.state.country !== prevState.country) {
+            clearTimeout(this.timeoutId);
             this.fetchNews();
         } else if (this.state.articles.length && this.state.articles.length !== prevState.articles.length) {
             this.articleSentimentSequence();
@@ -104,11 +107,11 @@ class NewsFeed extends Component {
         }
         
         // 2. Create copy of current articles but WITHOUT the target article
-        const copyArticles = [...this.state.articles]; // destructures??
+        const copyArticles = [...this.state.articles]; // spreads
         copyArticles.shift();
         
         // 3. Create copy of renderable articles array but with new combined article at the front of the line!
-        const copyArticlesWithSent = [...this.state.articlesWithSent]; // destructures??
+        const copyArticlesWithSent = [...this.state.articlesWithSent]; // spreads
         copyArticlesWithSent.unshift(articleWithSent);
 
         // 4. Get average sentiment/polarity of ALL articles currently in renderable articles array
@@ -125,11 +128,11 @@ class NewsFeed extends Component {
         // 6. Otherwise, wait 3 seconds before updating state and triggering a re-render
         // This creates more of a slow drip user experience, giving users time to read the headlines
         } else {
-            const timeoutId = setTimeout(() => {    
+            this.timeoutId = setTimeout(() => {
                 this.setState({
                     articlesWithSent: copyArticlesWithSent,
                     articles: copyArticles,
-                    avgSentiment: avgSentiment
+                    avgSentiment: avgSentiment,
                 });
             }, 3000);
         }
@@ -140,8 +143,8 @@ class NewsFeed extends Component {
     renderArticles() {
         const renderedArticles = this.state.articlesWithSent.map((article, index) => {
             return (
-                <div className="articleContainer" key={this.state.articlesWithSent.length - index}>
-                    <a href={article.url} target="_blank" rel="noopener noreferrer"></a>
+                <a className="articleUrl" href={article.url} target="_blank" rel="noopener noreferrer" key={this.state.articlesWithSent.length - index}>
+                <div className="articleContainer">
                     <div className="articleImage">
                         <img src={article.image} alt={article.description} />
                     </div>
@@ -158,6 +161,7 @@ class NewsFeed extends Component {
                             AI Confidence: <strong>{Math.floor(article.polarityConfidence * 100)}%</strong></h4>
                     </div>
                 </div>
+                </a>
             );
         });
     
@@ -201,7 +205,7 @@ class NewsFeed extends Component {
     renderEmptyState() {
         return (
             <div className="circularProgress">
-                <CircularProgress color="#aaa" />
+                <CircularProgress color="primary" />
             </div>
         )
     }

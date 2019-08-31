@@ -5,9 +5,9 @@ function Footer(props) {
         <footer className="footerComponent">
             <h3>Data kindly provided by:</h3>
             <ul className="attributions">
-                {props.attributions.map(attr => {
+                {props.attributions.map((attr, index) => {
                     return (
-                        <li><a href={attr.href} target="_blank" rel="noopener noreferrer">{attr.name}</a></li>
+                        <li key={index}><a href={attr.href} target="_blank" rel="noopener noreferrer">{attr.name}</a></li>
                     );
                 })}
             </ul>
