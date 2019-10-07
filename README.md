@@ -1,6 +1,6 @@
 # Polar News
 
-[https://polar.danfitz.com](https://polar.danfitz.com)
+[polar.danfitz.com](https://polar.danfitz.com)
 
 Discover how **positive**, **negative**, or **neutral** top news headlines are around the world using AI.
 
