@@ -30,7 +30,6 @@ What's a polarity measurement? Basically, it's a measurement of how positive, ne
 ## Feature Roadmap
 
 Given everything available in both APIs, here's a few features worth logging here for possible future development:
-* **Fix asynchronous issues where setting a filter leads to a ghost of the old filter flickering in and out of view**
 * Analyze article contents, not just headlines (may require a web scraper)
 * Add support for multiple languages (specifically ones that both News API and Aylien support)
 * Increase number of articles per query (maybe 100?)
